@@ -1,0 +1,6 @@
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+export function HomeNav({ spaName = "Massage Bali" }: { spaName?: string }) { const [open, setOpen] = useState(false); return <header className="site-header"><nav className="desktop-nav" aria-label="Primary navigation"><div><a href="#about">About us</a><a href="#services">Services</a></div><a className="logo-art" href="#top" aria-label={`${spaName} home`}><Image src="/massage-bali-logo.png" alt={spaName} fill sizes="140px" /></a><div><a href="#prices">Pricelist</a><a href="#booking">Book</a></div></nav><nav className="mobile-nav" aria-label="Mobile navigation"><a className="logo-art" href="#top" aria-label={`${spaName} home`}><Image src="/massage-bali-logo.png" alt={spaName} fill sizes="120px" /></a><button type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}</button></nav>{open && <div id="mobile-menu" className="mobile-menu"><a href="#about" onClick={() => setOpen(false)}>About us</a><a href="#services" onClick={() => setOpen(false)}>Services</a><a href="#prices" onClick={() => setOpen(false)}>Pricelist</a><a href="#booking" onClick={() => setOpen(false)}>Book</a></div>}</header>; }
+
+
