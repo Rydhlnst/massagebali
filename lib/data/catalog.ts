@@ -1,7 +1,7 @@
 export type Product = { id: string; name: string; slug: string; category: string; description: string; durationMinutes: number; priceIdr: number; isActive: boolean; sortOrder: number };
 export type SiteSettings = { spaName: string; address: string; whatsapp: string; serviceMode: string; heroTitle: string; heroSubtitle: string };
 
-export const fallbackSettings: SiteSettings = { spaName: "Massage Bali", address: "Canggu, Bali", whatsapp: "082326348577", serviceMode: "Home service massage only", heroTitle: "Relax your body. Refresh your mind.", heroSubtitle: "Professional massage treatments delivered to your home in Canggu." };
+export const fallbackSettings: SiteSettings = { spaName: "Massage Bali", address: "Canggu, Bali", whatsapp: "089527439531", serviceMode: "Home service massage only", heroTitle: "Relax your body. Refresh your mind.", heroSubtitle: "Professional massage treatments delivered to your home in Canggu." };
 const item = (id: string, name: string, durationMinutes: number, priceIdr: number, category = "massage"): Product => ({ id, name, slug: name.toLowerCase().replaceAll(" ", "-"), category, description: `${name} home service massage in Canggu, Bali.`, durationMinutes, priceIdr, isActive: true, sortOrder: 0 });
 export const fallbackProducts: Product[] = [
   item("balinese-60", "Balinese Massage", 60, 300000), item("balinese-90", "Balinese Massage", 90, 450000),
@@ -39,3 +39,4 @@ export async function getSettings(): Promise<SiteSettings> {
   const values = Object.fromEntries(rows.map((row) => [row.key, row.value]));
   return { ...fallbackSettings, ...values } as SiteSettings;
 }
+

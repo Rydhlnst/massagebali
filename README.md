@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Massage Bali content dashboard
 
-The public site is configured for Massage Bali, Canggu, Bali, with home-service massage only and WhatsApp booking at 082326348577.
+The public site is configured for Massage Bali, Canggu, Bali, with home-service massage only and WhatsApp booking at 089527439531.
 
 Set up the connected catalog:
 
@@ -54,3 +54,4 @@ The dashboard writes through Zod-validated API routes. Without `DATABASE_URL`, t
 The secured `POST /api/admin/media` route accepts image files up to 8 MB and uploads them to Cloudflare R2 using the server-only credentials in `.env.local`. It requires the same `x-admin-token` header as other dashboard mutations.
 
 AI-generated image assets require `OPENAI_API_KEY`; that key is intentionally not committed or requested in chat.
+
